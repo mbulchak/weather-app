@@ -10,7 +10,8 @@ function App() {
   const [location, setLocation] = useState('');
   const [error, setError] = useState('');
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=3d6d7a748ef6cab39b7c5bdb92ad39e7`;
+  const apiKey = import.meta.env.MY_OPENWEATHERMAP_API_KEY;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
 
   const searchWeatherLocation = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
@@ -70,6 +71,7 @@ function App() {
                 onKeyDownCapture={searchWeatherLocation}
                 placeholder='Enter Location'
                 className='w-[500px]'
+                autoFocus
               />
 
               {error && (
