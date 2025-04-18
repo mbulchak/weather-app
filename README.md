@@ -2,7 +2,7 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- [Demo](https://github.com/mbulchak/main--temp/)
+- [Demo](https://mbulchak.github.io/weather-app/)
 
 ## Don't forget It, if you are doing a deploy
 
