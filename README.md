@@ -1,15 +1,29 @@
-# React + TypeScript + Vite
+# Weather application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This weather application allows you to input a city name and display a info about weather in this city.
 
 - [Demo](https://mbulchak.github.io/weather-app/)
 
-## Don't forget It, if you are doing a deploy
+## Features
+- show information about the weather in the typing city: city name, temperature, short weather description, etc.
+- doing error handling if the city is not found, and related to the API
+- cache the weather data for 5 minutes
+- tests for incorrect city entering, and if the weather data is displayed correctly
 
-If you are doing deploy, don't forget to create a personal token and in .github/workflows/deploy.yml change
+## Instruments
+- React, TypeScript, localStorage, axios
+- OpenWeatherMap API
+- Mantine, Tailwind
+- Vitest, React Testing Library
 
-
+## Usage
+- clone the repo
+- install dependencies
 ```js
-env:
-          GITHUB_TOKEN: ${{ secrets.YOUR_SECRET_TITLE }}
+npm install
 ```
+- run the projects
+```js
+npm run dev
+```
+- click on the url in the terminal
