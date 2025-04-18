@@ -75,7 +75,7 @@ function App() {
         .forEach((key) => {
           localStorage.removeItem(key);
         });
-        
+
       setWeatherData(null);
     }, 300000);
 
@@ -85,8 +85,8 @@ function App() {
   return (
     <>
       <MantineProvider>
-        <div className='h-screen flex justify-center items-center'>
-          <div className='h-[450px] w-[500px] flex flex-col gap-[30px] items-center'>
+        <div className='h-screen py-[30px] flex justify-center sm:items-center'>
+          <div className='h-[450px] sm:w-[500px] w-[300px] flex flex-col gap-[30px] items-center'>
             <div className='flex flex-col gap-[15px]'>
               <Input
                 variant='filled'
@@ -96,7 +96,7 @@ function App() {
                 onChange={(event) => setLocation(event.target.value)}
                 onKeyDownCapture={searchWeatherLocation}
                 placeholder='Enter Location'
-                className='w-[500px]'
+                className='w-[300px] sm:w-[500px]'
                 autoFocus
               />
 
