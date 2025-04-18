@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import '@mantine/core/styles.css';
 import './App.css';
 import axios from 'axios';
@@ -15,10 +15,21 @@ function App() {
 
   const searchWeatherLocation = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
+      const cacheKey = `weather-${location}`;
+      const cache = localStorage.getItem(cacheKey);
+
+      if (cache) {
+        setWeatherData(JSON.parse(cache));
+        setLocation('');
+        return;
+      }
+
       axios
         .get(url)
         .then((response) => {
+          localStorage.setItem(cacheKey, JSON.stringify(response.data));
           setWeatherData(response.data);
+          setLocation('');
           setError('');
         })
         .catch((error) => {
@@ -44,9 +55,10 @@ function App() {
               default:
                 setError(`Error: ${error.response.status}`);
             }
+          } else {
+            setError('Network error, please try again.');
           }
-        })
-        .finally(() => setLocation(''));
+        });
     }
   };
 
@@ -55,6 +67,20 @@ function App() {
 
     return localTime.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
   };
+
+  useEffect(() => {
+    const timeout = setInterval(() => {
+      Object.keys(localStorage)
+        .filter((key) => key.startsWith('weather-'))
+        .forEach((key) => {
+          localStorage.removeItem(key);
+        });
+        
+      setWeatherData(null);
+    }, 300000);
+
+    return () => clearInterval(timeout);
+  }, []);
 
   return (
     <>
