@@ -17,7 +17,7 @@ This weather application allows you to input a city name and display a info abou
 - Vitest, React Testing Library
 
 ## Usage
-- clone the repo
+- clone this repo
 - install dependencies
 ```js
 npm install
