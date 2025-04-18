@@ -22,6 +22,10 @@ This weather application allows you to input a city name and display a info abou
 ```js
 npm install
 ```
+- create a `.env` file in the root
+```js
+VITE_OPENWEATHERMAP_API_KEY=your_api_key
+```
 - run the projects
 ```js
 npm run dev
