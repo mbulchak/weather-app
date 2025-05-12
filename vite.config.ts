@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/weather-app/',
+  base: '/',
   test: {
     environment: 'happy-dom',
     setupFiles: ['./src/tests/setup.ts'],
