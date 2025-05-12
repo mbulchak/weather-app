@@ -2,7 +2,7 @@
 
 This weather application allows you to input a city name and display a info about weather in this city.
 
-- [Demo](https://mbulchak.github.io/weather-app/)
+- [Demo](https://weather-app-six-phi-35.vercel.app/)
 
 ## Features
 - show information about the weather in the typing city: city name, temperature, short weather description, etc.
